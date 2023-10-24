@@ -1,0 +1,116 @@
+{
+    "general": {
+        "auto": true,
+        "rate": 600,
+        "rateSelector": [
+            2
+        ],
+        "gripType": "tac:two_handed_m60",
+        "recoilAngle": 1.45,
+        "recoilKick": 1.625,
+        "horizontalRecoilAngle": 1.25,
+        "recoilAdsReduction": 0.25,
+        "cameraRecoilModifier": 1.25,
+        "weaponRecoilOffset": 0.725,
+        "recoilDuration": 0.35,
+        "weightKilo": 8.25,
+        "spread": 0.495,
+        "firstShotSpread": 0.095,
+        "hipFireInaccuracy": 6.45,
+        "projToMinAccuracy": 17,
+        "msToAccuracyReset": 750,
+        "movementInaccuracy": 0.45
+    },
+    "reloads": {
+        "magFed": true,
+        "maxAmmo": 80,
+        "reloadMagTimer": 100,
+        "additionalReloadEmptyMagTimer": 24,
+        "maxAdditionalAmmoPerOC": [
+            40,
+            70,
+            120
+        ],
+        "preReloadPauseTicks": 18,
+        "openBolt": true
+    },
+    "projectile": {
+        "item": "tac:nato_556_bullet",
+        "visible": false,
+        "damage": 3,
+        "armorIgnore": 1.1,
+        "critical": 0.0,
+        "criticalDamage": 0.875,
+        "headDamage": 1.0,
+        "closeDamage": 1.1,
+        "decayStart": 0.17,
+        "minDecayMultiplier": 0.3,
+        "decayEnd": 1.0,
+        "size": 0.075,
+        "speed": 27.5,
+        "trailLengthMultiplier": 2.25,
+        "life": 11
+    },
+    "sounds": {
+        "fire": "tac:item.m249_fire",
+        "reloadNormal": "tac:animation.m249_reload_norm",
+        "reloadEmpty": "tac:animation.m249_reload_empty",
+        "draw": "tac:animation.m249_draw",
+        "inspect": "tac:animation.m249_inspect",
+        "cock": "tac:item.pistol.cock",
+        "silencedFire": "tac:item.m249_fire_s"
+    },
+    "display": {
+        "flash": {
+            "yOffset": 8.645,
+            "zOffset": -23.42,
+            "size": 0.94,
+            "trailAdjust": 1.5
+        },
+        "shellCasing": {
+            "tickLife": 10,
+            "yOffset": -3,
+            "xOffset": 0,
+            "zOffset": 0,
+            "scale": 0.75,
+            "velocityX": 9,
+            "velocityY": -1,
+            "velocityZ": 0,
+            "rVelocityX": 1,
+            "rVelocityY": 2,
+            "rVelocityZ": 1.0,
+            "aVelocityX": 15.0,
+            "aVelocityY": -60.0,
+            "aVelocityZ": 15.0,
+            "casingModel": "tac:special/shell_large"
+        },
+        "hipfireScale": 3,
+        "hipfireMoveScale": 0.5,
+        "hipfireRecoilScale": 1.0,
+        "weaponType": 1
+    },
+    "modules": {
+        "zoom": {
+            "fovModifier": 0.8,
+            "yOffset": 11.025,
+            "zOffset": -5.3
+        },
+        "attachments": {
+            "scope": {
+                "yOffset": 10.125,
+                "zOffset": 6.5,
+                "scale": 1.0
+            },
+            "underBarrel": {
+                "yOffset": 7.799,
+                "zOffset": -2.35,
+                "scale": 0.0
+            },
+            "extendedMag": {
+                "yOffset": 1000.89,
+                "zOffset": 5.35,
+                "scale": 0.0
+            }
+        }
+    }
+}
