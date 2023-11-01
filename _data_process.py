@@ -25,7 +25,7 @@ def _extract_data():
     with ZipFile('tac.jar', 'r') as tac_file:
         for file_info in tac_file.infolist():
             if file_info.filename.startswith('data/tac/guns/'):
-                tac_file.extract(file_info, 'data/tac/guns')
+                tac_file.extract(file_info)
 
 
 def _clear_data():
