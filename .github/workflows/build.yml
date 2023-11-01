@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r requirements.txt
 
-      - name: Run a multi-line script
+      - name: Build
         run: python3 main.py
         env: 
           GH_TOKEN: ${{ secrets.GH_PERSONAL_TOKEN }}

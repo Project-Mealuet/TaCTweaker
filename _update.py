@@ -37,7 +37,6 @@ def update(
                         indent=4
                     )
                 break
-        download('https://src.mealuet.com/TaCRebalanced.png', 'pack.png')
         metadata = {
             'id': latest_file_metadata['id'],
             'displayName': latest_file_metadata['displayName'],
