@@ -1,8 +1,6 @@
 from json import dump, load
 from re import fullmatch
 
-from wget import download
-
 from _curseforge_api import get_mod_files
 
 PACK_FORMAT_MAP = {

@@ -11,11 +11,11 @@ def _commit_files_list(
         github_token: str
 ):
     system('git config user.name "Build Bot"')
-    system('git config user.email "buildbot@mealuet.com"')
+    system('git config user.email "bot@mealuet.com"')
     system('git add files_list.json')
     with open('metadata.json', 'r', encoding='UTF-8') as metadata_file:
         metadata = load(metadata_file)
-    system(f'git commit -m "TaC updated - `{metadata['id']}`"')
+    system(f'git commit -m "TaC updated - ID{metadata['id']}"')
     system(f'git push https://{github_token}@github.com/kressety/TaCGunsRebalance.git')
 
 
@@ -24,7 +24,8 @@ def _post_to_github(
         github_token: str,
         params: dict = None,
         headers_add: dict = None,
-        data=None
+        data=None,
+        base_name: str = 'api.github.com'
 ):
     headers = {
         'Accept': 'application/vnd.github+json',
@@ -36,7 +37,7 @@ def _post_to_github(
             headers[key] = headers_add[key]
     try:
         response = post(
-            url=f'https://api.github.com{route}',
+            url=f'https://{base_name}{route}',
             headers=headers,
             json=params,
             data=data
@@ -60,7 +61,7 @@ def _post_release(
         route='/repos/kressety/TaCGunsRebalance/releases',
         github_token=github_token,
         params={
-            'tag_name': metadata['id'],
+            'tag_name': f'ID{metadata["id"]}',
             'target_commitish': 'main',
             'name': metadata['displayName'],
             'body': f'Built at {time_now.tm_year}-{time_now.tm_mon}-{time_now.tm_mday} '
@@ -79,7 +80,8 @@ def _post_release(
                     headers_add={
                         'Content-Type': 'application/octet-stream'
                     },
-                    data=asset_file
+                    data=asset_file,
+                    base_name='uploads.github.com'
                 )
 
 

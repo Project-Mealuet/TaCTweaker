@@ -29,8 +29,8 @@ def _extract_data():
 
 
 def _clear_data():
-    if exists('data/tac/guns'):
-        rmtree('data/tac/guns')
+    if exists('data'):
+        rmtree('data')
 
 
 def _pack_data(
@@ -65,5 +65,9 @@ def data_process():
         _data_rebalance(rebalance_param)
         with open('metadata.json', 'r', encoding='UTF-8') as metadata_file:
             metadata = load(metadata_file)
-        _pack_data(f'{metadata["displayName"].lower().strip().replace(' ', '_')}_rebalanced_{str(rebalance_param)}.zip')
+        _pack_data(f'{metadata["displayName"].lower().strip()
+                   .replace(' ', '_')
+                   .replace('-', '_')
+                   .replace('.', '_')
+                   .replace('_zip', '.zip')}_rebalanced_{str(rebalance_param)}.zip')
         _clear_data()
